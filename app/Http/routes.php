@@ -34,3 +34,25 @@ Route::auth();
 
 
 Route::get('/home', 'HomeController@index');
+
+/* Grupo de rutas para el administrador (el que registrará a los técnicos) 
+*/
+Route::group(['prefix'=>'admin','namespace'=>'Admin'],function(){
+	Route::resource('users','UsersController');
+});
+
+
+Route::get('enviar', ['as' => 'enviar', function () {
+ 
+    $data = ['link' => 'http://keepsafe.com'];
+ 
+    \Mail::send('emails.password', $data, function ($message) {
+ 
+        $message->from('from@example.com', 'Example');
+ 
+        $message->to('mdm_beas@hotmail.com')->subject('Password');
+ 
+    });
+ 
+    return "Se envío el email";
+}]);

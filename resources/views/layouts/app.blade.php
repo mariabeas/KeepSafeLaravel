@@ -17,6 +17,7 @@
 
     <style>
         body {
+
             font-family: 'Lato';
         }
 
@@ -25,10 +26,11 @@
         }
     </style>
 </head>
-<body id="app-layout">
+<body id="app-layout" background="/img/fondo.jpg">
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">
+                
 
                 <!-- Collapsed Hamburger -->
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
@@ -54,7 +56,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
                     @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">Loguearse</a></li>
+                        <li><a href="{{ url('/login') }}">Iniciar sesión</a></li>
                         <li><a href="{{ url('/register') }}">Registrarse</a></li>
                     @else
                         <li class="dropdown">
